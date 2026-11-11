@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6">
+  <meta name="description" content="60道生活情境题，以四维偏好与A/T应对风格探索32型人格。选完自动切题，生成你的专属人格档案。">
+  <title>MBTI 风格 32型人格测试 · 人格研究所</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/lucide.min.js" defer></script>
+  <script src="data.js" defer></script>
+  <script src="rules.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#quiz" aria-label="人格研究所，返回测试"><span class="brand-mark"><i data-lucide="fingerprint"></i></span><span>人格研究所<small>PERSONALITY JOURNAL</small></span></a>
+    <nav aria-label="主导航" class="main-nav" hidden><a href="#quiz" data-nav="quiz">人格测试</a><a href="#types" data-nav="types">32型图鉴</a></nav>
+    <span class="header-note">一份关于自己的记录</span>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><span>你比一个类型，更丰富。</span><span>自编五维趣味问卷 · 非官方 MBTI® 量表</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="restart-dialog" aria-labelledby="restart-title"><div class="dialog-top"><span class="eyebrow">重新记录</span><button class="icon-button" data-action="close-dialog" aria-label="关闭" title="关闭"><i data-lucide="x"></i></button></div><h2 id="restart-title">开始一份新的人格档案？</h2><p>本次答案和补充选择将清空。</p><div class="dialog-actions"><button class="button secondary" data-action="close-dialog">保留答案</button><button class="button primary" data-action="confirm-restart">重新测试<i data-lucide="rotate-ccw"></i></button></div></dialog>
+  <dialog id="profile-dialog" class="profile-dialog" aria-labelledby="profile-dialog-title"></dialog>
+</body>
+</html>
