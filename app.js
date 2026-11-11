@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const data = window.MBTI_DATA, rules = window.MBTI_RULES, main = document.querySelector('#main');
-  const STORE_KEY = 'personality-journal:answers:v3', ACCESS_KEY = 'personality-journal:access:v1';
+  const STORE_KEY = 'personality-journal:answers:v3', ACCESS_KEY = 'personality-journal:access:v2';
   const questionCount = data.questions.length;
   let state = restore(), unlocked = restoreAccess(), transitioning = false, transitionId = 0, activeAnimation;
   let toastTimer, lastFocus, filter = 'all', subtypeFilter = 'all';
@@ -61,7 +61,7 @@ main.innerHTML = `<div class="gate-layout"><div class="gate-art"><img src="asset
   }
   function unlock(event) {
     event.preventDefault(); const input = document.querySelector('#access-code'), error = document.querySelector('#access-error');
-    if (input.value !== '9900') { input.setAttribute('aria-invalid', 'true'); error.textContent = input.value.length !== 4 ? '请输入四位数字访问码。' : '访问码不正确，请再试一次。'; input.focus(); input.select(); return; }
+    if (input.value !== '9898') { input.setAttribute('aria-invalid', 'true'); error.textContent = input.value.length !== 4 ? '请输入四位数字访问码。' : '访问码不正确，请再试一次。'; input.focus(); input.select(); return; }
     unlocked = true; try { sessionStorage.setItem(ACCESS_KEY, 'unlocked'); } catch {}
     history.replaceState(null, '', complete() ? '#result' : '#quiz'); render(true, true);
   }
